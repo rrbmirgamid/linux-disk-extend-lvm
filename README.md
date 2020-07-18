@@ -1,4 +1,4 @@
-```javascript
+```console
 root@srvub20:/home/ub20# lvdisplay
   --- Logical volume ---
   LV Path                /dev/ubuntu-vg/ubuntu-lv
@@ -19,13 +19,13 @@ root@srvub20:/home/ub20# lvdisplay
 
 ```
 
-```
+```console
 root@srvub20:/home/ub20# lvextend /dev/ubuntu-vg/ubuntu-lv -L +1G
   Size of logical volume ubuntu-vg/ubuntu-lv changed from <4.98 GiB (1274 extents) to <5.98 GiB (1530 extents).
   Logical volume ubuntu-vg/ubuntu-lv successfully resized.
 ```
 
-```
+```console
 root@srvub20:/home/ub20# lvdisplay
   --- Logical volume ---
   LV Path                /dev/ubuntu-vg/ubuntu-lv
@@ -46,7 +46,7 @@ root@srvub20:/home/ub20# lvdisplay
 
 ```
 
-```
+```console
 root@srvub20:/home/ub20# resize2fs /dev/ubuntu-vg/ubuntu-lv
 resize2fs 1.45.5 (07-Jan-2020)
 Filesystem at /dev/ubuntu-vg/ubuntu-lv is mounted on /; on-line resizing required
