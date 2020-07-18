@@ -1,7 +1,4 @@
-# linux-disk-extend
-
-#### lvextend
-
+```javascript
 root@srvub20:/home/ub20# lvdisplay
   --- Logical volume ---
   LV Path                /dev/ubuntu-vg/ubuntu-lv
@@ -20,10 +17,15 @@ root@srvub20:/home/ub20# lvdisplay
   - currently set to     256
   Block device           253:1
 
+```
+
+```
 root@srvub20:/home/ub20# lvextend /dev/ubuntu-vg/ubuntu-lv -L +1G
   Size of logical volume ubuntu-vg/ubuntu-lv changed from <4.98 GiB (1274 extents) to <5.98 GiB (1530 extents).
   Logical volume ubuntu-vg/ubuntu-lv successfully resized.
+```
 
+```
 root@srvub20:/home/ub20# lvdisplay
   --- Logical volume ---
   LV Path                /dev/ubuntu-vg/ubuntu-lv
@@ -42,18 +44,12 @@ root@srvub20:/home/ub20# lvdisplay
   - currently set to     256
   Block device           253:1
 
-root@srvub20:/home/ub20# pydf
-Filesystem                  Size  Used Avail  Use%                                            Mounted on
-/dev/ubuntu--vg-ubuntu-/lv 4952M 4672M   19M  94.3 [######################################..] /
-/dev/sda2                   976M  103M  806M  10.5 [####....................................] /boot
+```
 
+```
 root@srvub20:/home/ub20# resize2fs /dev/ubuntu-vg/ubuntu-lv
 resize2fs 1.45.5 (07-Jan-2020)
 Filesystem at /dev/ubuntu-vg/ubuntu-lv is mounted on /; on-line resizing required
 old_desc_blocks = 1, new_desc_blocks = 1
 The filesystem on /dev/ubuntu-vg/ubuntu-lv is now 1566720 (4k) blocks long.
-
-root@srvub20:/home/ub20# pydf
-Filesystem                  Size  Used Avail  Use%                                            Mounted on
-/dev/ubuntu--vg-ubuntu-/lv 5960M 4672M  987M  78.4 [###############################.........] /
-/dev/sda2                   976M  103M  806M  10.5 [####....................................] /boot
+```
